@@ -1,29 +1,16 @@
 function receivesAFunction(callback) {
-  console.log("receives a function and calls it");
-  
-  callback();
-}
+  callback()
+};
 
-const spy = function callback() {
-console.log("mycallback function"); 
- 
-}
-receivesAFunction(spy);
+const returnsANamedFunction = () => {
+  return function namedFunction() {
+    console.log('named function');
+  };
+};
 
-function returnsANamedFunction(y) {
-    return function myfunction (x) { 
-        console.log("returns a named function"); 
-    };
-}
-const myFunction = returnsANamedFunction(y); 
 
-myfunction(x)
-
-function returnsAnAnonymousFunction() {
-    return function() {
-      console.log('retuns an anonymous function'); 
-    }
+const returnsAnAnonymousFunction = () => {
+  return function(){
+    console.log('returns an anonymous function')
   }
-  
-  const anonymousFunction = returnsAnAnonymousFunction();
-  anonymousFunction();
+}
